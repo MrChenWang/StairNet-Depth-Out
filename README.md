@@ -83,7 +83,7 @@ If our method and dataset are useful to your research, please consider to cite u
     doi = {10.17632/6kffmjt7g2.1}
 }
 ```
-
+Please note that the metrics in the papers may differ from those measured in codes, as we have made some adjustments to the network architecture and parameters.
 ## License
 This project is licensed under the [Creative Commons NonCommercial (CC BY-NC 3.0)](https://creativecommons.org/licenses/by-nc/3.0/) 
 license where only non-commercial usage is allowed. For commercial usage, please contact us.
