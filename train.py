@@ -207,8 +207,9 @@ def MPA(pred, label, classes=None):
     TP = [0.0, 0.0, 0.0]
     w = pred.shape[0]
     h = pred.shape[1]
-    mpa, pa, iou = 0.0, 0.0, 0.0
-    div, div1 = 0, 0
+    mpa = 0.0
+    pa = 0.0
+    iou = 0.0
     for cls in range(len(classes)):
         for i in range(w):
             for j in range(h):
@@ -220,13 +221,11 @@ def MPA(pred, label, classes=None):
                     sum1[cls] += 1
         pa += TP[cls]
         if sum[cls] != 0:
-            div += 1
             mpa += TP[cls] / sum[cls]
         if (sum1[cls] + sum[cls] - TP[cls]) != 0:
-            div1 += 1
             iou += TP[cls] / (sum1[cls] + sum[cls] - TP[cls])
 
-    return pa / w / h, mpa / div, iou / div1
+    return pa / w / h, mpa / len(classes), iou / len(classes)
 
 
 # Calculate the accuracy
